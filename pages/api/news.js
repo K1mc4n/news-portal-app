@@ -1,19 +1,13 @@
 export default async function handler(req, res) {
   const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
-  const category = req.query.category || "general";
+  const category = req.query.category || 'general';
+  const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`;
 
   try {
-    const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch news");
-    }
-
+    const response = await fetch(url);
     const data = await response.json();
-    res.status(200).json(data.articles);
+    res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: 'Failed to fetch news' });
   }
 }
