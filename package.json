@@ -10,9 +10,8 @@
   "next": "13.x.x",
   "react": "^18.x.x",
   "react-dom": "^18.x.x",
-  "tailwindcss": "^3.x.x",  // Jika menggunakan Tailwind
-  "next-auth": "^4.x.x"  // Jika menggunakan autentikasi
-}
+  "tailwindcss": "^3.x.x", 
+  "next-auth": "^4.x.x"  }
 
   }
 }
