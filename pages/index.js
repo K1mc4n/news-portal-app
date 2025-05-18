@@ -35,27 +35,27 @@ export default function NewsPage() {
       {news.length === 0 ? (
         <p className="text-center">No news available.</p>
       ) : (
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {news.map((article, index) => (
             <div
               key={index}
               className="bg-white rounded-lg shadow p-4 hover:shadow-md transition"
             >
-              <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
+              <h2 className="text-xl font-semibold mb-2 line-clamp-2">{article.title}</h2>
               {article.urlToImage ? (
                 <img
                   src={article.urlToImage}
                   alt={article.title}
-                  className="w-full h-40 object-cover rounded mb-4"
+                  className="w-full h-44 object-cover rounded mb-4"
                 />
               ) : (
                 <img
                   src="/fallback-image.png"
                   alt="fallback"
-                  className="w-full h-40 object-cover rounded mb-4"
+                  className="w-full h-44 object-cover rounded mb-4"
                 />
               )}
-              <p className="text-gray-700 mb-2">{article.description}</p>
+              <p className="text-gray-700 mb-2 line-clamp-3">{article.description}</p>
               <a
                 href={article.url}
                 target="_blank"
