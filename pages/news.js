@@ -5,14 +5,14 @@ export default function NewsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/news') // asumsi handler kamu disimpan di `pages/api/news.js`
-      .then(res => res.json())
-      .then(data => {
+    fetch('/api/news')
+      .then((res) => res.json())
+      .then((data) => {
         setNews(data.articles || []);
         setLoading(false);
       })
-      .catch(err => {
-        console.error('Error fetching news:', err);
+      .catch((err) => {
+        console.error('Fetch error:', err);
         setLoading(false);
       });
   }, []);
@@ -22,6 +22,7 @@ export default function NewsPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-6 text-center">Top Headlines</h1>
+      {news.length === 0 && <p className="text-center">No news available.</p>}
       <div className="grid gap-6">
         {news.map((article, index) => (
           <div
