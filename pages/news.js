@@ -1,5 +1,5 @@
+""// pages/news.js
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 export default function NewsPage() {
   const [news, setNews] = useState([]);
@@ -29,50 +29,31 @@ export default function NewsPage() {
   if (error) return <p className="text-center mt-10 text-red-500">{error}</p>;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Top Headlines</h1>
+    <div className="max-w-5xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6 text-center">All Headlines</h1>
       {news.length === 0 ? (
         <p className="text-center">No news available.</p>
       ) : (
-        <div className="grid gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {news.map((article, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow p-6 hover:shadow-md transition"
+              className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition border border-gray-200"
             >
-              <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
+              <h2 className="text-lg font-semibold mb-2 line-clamp-2">{article.title}</h2>
               {article.urlToImage ? (
                 <img
                   src={article.urlToImage}
                   alt={article.title}
-                  className="w-full h-60 object-cover rounded mb-4"
+                  className="w-full h-40 object-cover rounded mb-3"
                 />
               ) : (
                 <img
                   src="/fallback-image.png"
                   alt="fallback"
-                  className="w-full h-60 object-cover rounded mb-4"
+                  className="w-full h-40 object-cover rounded mb-3"
                 />
               )}
-              <p className="text-gray-700 mb-2">{article.description}</p>
+              <p className="text-sm text-gray-600 mb-2 line-clamp-3">{article.description}</p>
               <a
                 href={article.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline text-sm"
-              >
-                Read full article →
-              </a>
-            </div>
-          ))}
-        </div>
-      )}
-      <div className="text-center mt-6">
-        <Link href="/news" className="text-blue-500 hover:underline">
-          View More News →
-        </Link>
-      </div>
-    </div>
-  );
-}
-""
