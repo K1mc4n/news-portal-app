@@ -7,10 +7,11 @@
     "start": "next start"
   },
   "dependencies": {
-  "next": "13.x.x",
-  "react": "^18.x.x",
-  "react-dom": "^18.x.x",
-  "tailwindcss": "^3.x.x", 
-  "next-auth": "^4.x.x"  }
-
+    "@farcaster/frame-sdk": "^0.0.63",
+    "next": "13.x.x",
+    "next-auth": "^4.x.x",
+    "react": "^18.x.x",
+    "react-dom": "^18.x.x",
+    "tailwindcss": "^3.x.x"
   }
+}
