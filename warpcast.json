@@ -2,5 +2,7 @@
   "name": "News Portal",
   "description": "Top news at your fingertips.",
   "icon": "/favicon.ico",
-  "url": "https://news-portal-app-eta.vercel.app"
+  "url": "https://news-portal-app-eta.vercel.app",
+  "splash_img_url": "https://news-portal-app-eta.vercel.app/logo.png",
+  "splash_background_color": "#ffffff"
 }
