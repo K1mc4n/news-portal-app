@@ -1,4 +1,4 @@
-""// pages/index.js
+// pages/index.js
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
@@ -46,7 +46,7 @@ export default function NewsPage() {
                 <img
                   src={article.urlToImage}
                   alt={article.title}
-                  className="w-full h-32 object-cover rounded mb-2"
+                  className="w-full max-h-40 sm:max-h-60 md:max-h-72 object-cover rounded-lg mb-2"
                 />
               ) : (
                 <img
@@ -76,4 +76,3 @@ export default function NewsPage() {
     </div>
   );
 }
-""
