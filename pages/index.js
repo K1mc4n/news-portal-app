@@ -52,7 +52,7 @@ export default function NewsPage() {
                 <img
                   src="/fallback-image.png"
                   alt="fallback"
-                  className="w-full h-32 object-cover rounded mb-2"
+                  className="w-full max-h-40 sm:max-h-60 md:max-h-72 object-cover rounded-lg mb-2"
                 />
               )}
               <p className="text-gray-700 mb-2 line-clamp-3 text-sm">{article.description}</p>
